@@ -1,0 +1,57 @@
+<style>
+.simple_contacts_form .error
+{
+	color:red;
+}
+.simple_contacts_form .error input
+{
+	border:1px solid red;
+	color:red;
+}
+</style> 
+ 
+
+{{form 'contactform#send', 'global'=>true, 'run_before'=>'content', 'ajax'=>true }}
+{{notice}}
+
+<table class="simple_contacts_form">
+<tr>
+<td>Ваше имя</td>
+<td>{{input 'name', 'style'=>'width:330px;'}}</td>
+</tr>
+
+<tr>
+<td>e-mail</td>
+<td>{{input 'email', 'style'=>'width:330px;'}}</td>
+</tr>
+
+<tr>
+<td>Телефон</td>
+<td>{{input 'phone', 'style'=>'width:330px;'}}</td>
+</tr>
+
+<tr>
+<td>Сообщение</td>
+<td><textarea name="data[text]" style="width:330px;height:150px;"></textarea></td>
+</tr>
+<?php /*
+
+//Для работы вложенных файлов укажите multipart
+<tr>
+<td>Вложенный файл</td>
+<td>
+
+<input type="file" name="file" style="width:330px;">
+
+</td>
+</tr>
+ */ ?>
+ 
+	</table>
+ 
+		<input type="submit"   value="Отправить">
+ 
+ 
+{{/form}}
+ 
+ 
